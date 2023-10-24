@@ -1,6 +1,6 @@
 # Meraki Auto VPN Topology 
 
-This script visualises topology for Meraki AYUTO VPN. The script uses The Meraki Dashboard API Python library to get data. It draws topologies using graphviz.
+This script visualises topology for Meraki AUTO VPN. The script uses The Meraki Dashboard API Python library to get data. It draws topologies using graphviz.
 
 ## Setup
 
@@ -32,4 +32,5 @@ Script will create output and datajson directories. Output will store topology o
 
 ### Examples
 
-You can find examples in examples folder.~~~~
+You can find examples in pdf format in the examples folder.
+
