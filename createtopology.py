@@ -53,7 +53,7 @@ def add_spokes_to_tree(spokes, rootlist):
                 if record.name == spokehub["hubId"]:
                     record.children.append(Node(key, type="spoke", order=linkorder,
                                                 model=value["model"], mxnames=value["name"],
-                                                subnets=value["subnets"]))
+                                                subnets=value["subnets"], defaultroute=spokehub["useDefaultRoute"]))
                     for spoke in record.findall(name=key):
                         for subnet in value["subnets"]:
                             spoke.children.append(Node(subnet["localSubnet"], type=subnet["useVpn"]))
@@ -256,7 +256,7 @@ def create_graph_by_set(hubset, networks,
                 subnetlabelvpn = ""
                 subnetlabelnonvpn = ""
                 #need to check 0.0.0.0
-                edgelabel = create_label(b.order, linecolormap, colortolabel, False)
+                edgelabel = create_label(b.order, linecolormap, colortolabel, b.defaultroute)
                 for subnet in b.children:
                     if subnet.type == "True":
                         subnetlabelvpn += subnet.name + " | "
@@ -334,7 +334,7 @@ def link_hub(spokes, hubs, networks,
 def create_label(linecolor, linecolormap, colortolabel, defroute):
     #creating label for node or edge.
     deflabel = ""
-    if defroute == True:
+    if bool(defroute) == True:
         deflabel = "0.0.0.0/0"
     label = deflabel + "\n" + colortolabel[linecolormap[linecolor - 1]]
     return label
