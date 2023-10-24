@@ -34,4 +34,4 @@ Script will create output and datajson directories. Output will store topology o
 
 You can find examples in pdf format in the examples folder.
 
-<img src="https://github.com/LeChat19/MerakiAutoVPNTopology/blob/master/examples/topology_Meraki%20Launchpad%F0%9F%9A%80.png">~~~~
+<img src="https://github.com/LeChat19/MerakiAutoVPNTopology/blob/master/examples/topology_Meraki%20Launchpad%F0%9F%9A%80.png">
